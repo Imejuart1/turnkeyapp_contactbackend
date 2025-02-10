@@ -13,4 +13,8 @@ public class ContactService {
     public Contact saveContact(Contact contact) {
         return contactRepository.save(contact);
     }
+    public List<Contact> getAllContacts() {
+    return contactRepository.findAll(Sort.by(Sort.Direction.ASC, "firstName", "lastName"));
+}
+
 }
