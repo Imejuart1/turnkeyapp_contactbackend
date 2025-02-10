@@ -4,6 +4,8 @@ import com.example.demo.model.Contact;
 import com.example.demo.repository.ContactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.List;
+
 
 @Service
 public class ContactService {
@@ -13,8 +15,8 @@ public class ContactService {
     public Contact saveContact(Contact contact) {
         return contactRepository.save(contact);
     }
-    public List<Contact> getAllContacts() {
-    return contactRepository.findAll(Sort.by(Sort.Direction.ASC, "firstName", "lastName"));
-}
+     public List<Contact> getAllContacts() {
+        return contactRepository.findAll();
+    }
 
 }
