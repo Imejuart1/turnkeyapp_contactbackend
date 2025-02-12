@@ -20,4 +20,15 @@ public class ContactService {
     public void deleteContact(Long id) {
         contactRepository.deleteById(id);
     }
+    public Contact updateContact(Long id, Contact updatedContact) {
+    return contactRepository.findById(id).map(contact -> {
+        contact.setFirstName(updatedContact.getFirstName());
+        contact.setLastName(updatedContact.getLastName());
+        contact.setEmail(updatedContact.getEmail());
+        contact.setPhoneNumber(updatedContact.getPhoneNumber());
+        contact.setGroupType(updatedContact.getGroupType());
+        return contactRepository.save(contact);
+    }).orElseThrow(() -> new RuntimeException("Contact not found with id: " + id));
+}
+
 }

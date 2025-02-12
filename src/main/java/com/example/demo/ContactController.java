@@ -30,4 +30,11 @@ public class ContactController {
         contactService.deleteContact(id);
         return ResponseEntity.noContent().build(); // Return 204 No Content
     }
+  @PutMapping("/{id}")
+public ResponseEntity<Contact> updateContact(@PathVariable Long id, @RequestBody Contact updatedContact) {
+    Contact contact = contactService.updateContact(id, updatedContact);
+    return ResponseEntity.ok(contact);
+}
+
+
 }
