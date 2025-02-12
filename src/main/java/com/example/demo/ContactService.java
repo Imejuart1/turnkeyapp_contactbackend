@@ -27,6 +27,13 @@ public class ContactService {
         contact.setEmail(updatedContact.getEmail());
         contact.setPhoneNumber(updatedContact.getPhoneNumber());
         contact.setGroupType(updatedContact.getGroupType());
+        contact.setPhysicalAddress(updatedContact.getPhysicalAddress());
+
+        // ✅ Update image only if a new one is provided
+        if (updatedContact.getContactImage() != null && !updatedContact.getContactImage().isEmpty()) {
+            contact.setContactImage(updatedContact.getContactImage());
+        }
+
         return contactRepository.save(contact);
     }).orElseThrow(() -> new RuntimeException("Contact not found with id: " + id));
 }
