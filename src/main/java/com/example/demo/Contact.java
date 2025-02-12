@@ -18,7 +18,7 @@ public class Contact {
     private String lastName;
     private String email;
     private String phoneNumber;
-    private String contactImage;
+    private String contactImage;  // Stores Cloudinary URL
     private String physicalAddress;
-    private String groupType; // Family, Friends, Work, etc.
+    private String groupType; 
 }

@@ -24,4 +24,10 @@ public class ContactController {
     public List<Contact> getAllContacts() {
         return contactService.getAllContacts();
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteContact(@PathVariable Long id) {
+        contactService.deleteContact(id);
+        return ResponseEntity.noContent().build(); // Return 204 No Content
+    }
 }
