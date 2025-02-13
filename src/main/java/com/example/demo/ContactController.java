@@ -6,7 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-
+@OpenAPIDefinition(
+    info = @Info(
+        title = "Turnkey Phonebook API",
+        version = "1.0",
+        description = "API for managing phonebook contacts"
+    )
+)
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
