@@ -5,7 +5,8 @@ FROM openjdk:17-jdk-slim AS builder
 WORKDIR /app
 
 # Copy only the Gradle wrapper first
-COPY gradlew gradlew.bat gradle/wrapper/ ./
+COPY gradlew gradlew.bat ./
+COPY gradle/wrapper/ gradle/wrapper/
 
 # Give execution permission to the Gradle wrapper
 RUN chmod +x gradlew
