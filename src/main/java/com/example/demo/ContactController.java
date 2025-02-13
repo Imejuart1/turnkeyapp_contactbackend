@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-@CrossOrigin(origins = "https://turnkey-phonebook-app.vercel.app/")
+@CrossOrigin(origins = {"https://turnkey-phonebook-app.vercel.app", "http://localhost:4200"})
 @RestController
 @RequestMapping("/api/contacts")
 public class ContactController {
